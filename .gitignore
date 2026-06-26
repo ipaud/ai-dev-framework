@@ -1,0 +1,12 @@
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Editor / session cruft — ADF is the framework, not a consumer.
+# Building ADF inside Claude Code creates a session-local .claude/; never commit it.
+.claude/
+
+# Consumer-generated state must never live in the submodule.
+# Present here only as a guard against accidental commits during local testing.
+adf-memory/
+adf-adapter/
