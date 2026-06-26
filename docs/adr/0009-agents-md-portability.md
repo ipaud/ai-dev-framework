@@ -1,6 +1,6 @@
 # ADR-0009: AGENTS.md portability
 
-- **Status:** proposed (decision open)
+- **Status:** accepted
 - **Date:** 2026-06-26
 - **Targets:** v1.1 (roadmap cross-cutting)
 
@@ -16,14 +16,26 @@ this but did **not** resolve it: no verified claim survived on AGENTS.md vs spec
 (spec-kit, OpenSpec) or the Agent SDK's relationship to ADF's CORE constitution. This is the one
 research question left open.
 
-## Decision (proposed — NOT yet decided)
-Candidate directions, to be resolved by a dedicated follow-up before v1.1 ships:
-- **A. Emit `AGENTS.md`** in the consumer that points at the same read order as the thin `CLAUDE.md`
-  (single source, two entry files), so non-Claude tools get ADF's method too.
-- **B. Make the constitution tool-neutral** and have both `CLAUDE.md` and `AGENTS.md` be thin
-  pointers to it.
-- **C. Stay CLAUDE.md-only** and accept the portability limit (rejected unless the follow-up shows
-  AGENTS.md adoption is not load-bearing for ADF's users).
+## Decision
+**Option B (chosen).** The constitution is tool-neutral and reachable by both names:
+- ADF's own constitution lives at the submodule root `CLAUDE.md`, mirrored by a root `AGENTS.md`
+  pointer — so `adf/CLAUDE.md` and `adf/AGENTS.md` both resolve from a consumer.
+- `adf-init.sh` emits **two identical thin entry files** in the consumer — `CLAUDE.md` and
+  `AGENTS.md` — pointing at the same read order. Two real files (not a symlink) so the pointer
+  survives exFAT and tools that don't follow symlinks.
+
+AGENTS.md is freeform Markdown (no required schema), repo-root with nearest-file-wins, and
+coexists with CLAUDE.md (verified against agents.md). This gives ADF portability to the 25+ tools
+that read AGENTS.md without abandoning Claude Code's CLAUDE.md.
+
+Also fixed in this loop: the constitution was at `core/CLAUDE.md` while every pointer referenced
+`adf/CLAUDE.md`, which did not resolve from a consumer. Moving it to the submodule root corrects
+this.
+
+### Alternatives rejected
+- **A. AGENTS.md only as a consumer pointer** — leaves ADF's own repo CLAUDE.md-only and the
+  broken `adf/CLAUDE.md` path unfixed.
+- **C. Stay CLAUDE.md-only** — accepts a portability limit with no offsetting benefit.
 
 ## Alternatives considered
 See A/B/C above. No option is accepted yet — this ADR records the open decision so it isn't lost.

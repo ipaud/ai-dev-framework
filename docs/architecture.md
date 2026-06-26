@@ -25,11 +25,11 @@ consumer-project/
 This separation is what lets one ADF serve many projects and lets a project upgrade ADF (a
 submodule bump) without touching its own state.
 
-## What lives in core
+## What lives in the submodule
 
-| Directory | Contents | Role |
+| Path | Contents | Role |
 |---|---|---|
-| `core/CLAUDE.md` | the constitution | invariants + read order |
+| `CLAUDE.md` (= `AGENTS.md`) | the constitution | invariants + read order; at the submodule root so `adf/CLAUDE.md` resolves, and portable to non-Claude tools via `adf/AGENTS.md` |
 | `core/skills/` | 17 `SKILL.md` folders | procedures the agent runs |
 | `core/agents/` | 11 subagent files | delegation targets |
 | `core/workflows/` | 5 compositions | agent order + exit gate |

@@ -71,9 +71,9 @@ else
   echo "[init] wrote .claude/settings.json"
 fi
 
-# 6. Thin root CLAUDE.md if absent.
-if [ ! -f "$ROOT/CLAUDE.md" ]; then
-  cat > "$ROOT/CLAUDE.md" <<'EOF'
+# 6. Thin entry points if absent: CLAUDE.md (Claude Code) and AGENTS.md (portable, agents.md
+#    convention). Identical pointer content so non-Claude tools find the same method.
+read -r -d '' ENTRYPOINT <<'EOF' || true
 # Project constitution
 
 This project runs on ADF. Read, in order:
@@ -87,9 +87,14 @@ adapter and memory.
 
 Reference repositories for the repo-analysis skill go under `references/` (git-ignored).
 EOF
-  echo "[init] wrote thin root CLAUDE.md"
-else
-  echo "[init] root CLAUDE.md exists — left as-is."
-fi
+
+for entry in CLAUDE.md AGENTS.md; do
+  if [ ! -f "$ROOT/$entry" ]; then
+    printf '%s\n' "$ENTRYPOINT" > "$ROOT/$entry"
+    echo "[init] wrote thin $entry"
+  else
+    echo "[init] $entry exists — left as-is."
+  fi
+done
 
 echo "[init] done. Next: fill in adf-adapter/ADAPTER.md, then run adf/scripts/adf-doctor.sh"

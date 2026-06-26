@@ -20,7 +20,7 @@ Pre-1.0: the framework is built but unproven in a real project. Expect breaking 
 skills, agents, and scripts until a consuming project validates the method.
 
 ### Added
-- Agnostic core constitution (`core/CLAUDE.md`) and read order.
+- Agnostic constitution (`CLAUDE.md`) and read order.
 - 17 skills under `core/skills/`.
 - 11 Claude Code subagents under `core/agents/`.
 - 5 workflows and 11 fill-in templates.

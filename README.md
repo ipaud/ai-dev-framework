@@ -7,7 +7,8 @@ project-local adapter.
 
 ## What ADF gives a project
 
-- **A constitution** (`core/CLAUDE.md`) — invariants and the read order the agent follows.
+- **A constitution** (`CLAUDE.md`, also reachable as `AGENTS.md`) — invariants and the read order
+  the agent follows.
 - **17 skills** (`core/skills/`) — reusable procedures the agent runs (loops, reviews, testing,
   release, planning, …).
 - **11 agents** (`core/agents/`) — Claude Code subagents the orchestrator delegates to.
