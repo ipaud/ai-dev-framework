@@ -8,14 +8,11 @@
 
 ### Must-have
 
-- **M1 · Plugin + marketplace packaging.** Ship ADF as a Claude Code plugin
-  (`.claude-plugin/plugin.json` + `marketplace.json`) for native `install`/`update`/semver,
-  bundling the 17 skills + 11 agents + hooks. Keep the submodule path until an exFAT portability
-  test confirms the plugin covers copy-fallback cases (ADR-0007). — *plugins-reference,
-  plugin-marketplaces.*
-- **M2 · Lifecycle + compaction hooks.** Add `PreCompact` (snapshot `adf-memory` before turns are
-  summarized away), `SessionEnd` (durable state flush), and `UserPromptSubmit` (inject read-order +
-  active loop each prompt). Closes the known memory-compaction gap (ADR-0008). — *hooks doc.*
+- **M1 ✅ done · Plugin + marketplace packaging.** Shipped `.claude-plugin/plugin.json` +
+  `marketplace.json` + `core/hooks/hooks.json` (`${CLAUDE_PLUGIN_ROOT}`); submodule retained as the
+  state-seeding path (ADR-0007). — *plugins-reference, plugin-marketplaces.*
+- **M2 ✅ done · Lifecycle + compaction hooks.** Added `PreCompact`, `SessionEnd`, and
+  `UserPromptSubmit` hooks, wired by init + checked by doctor (ADR-0008). — *hooks doc.*
 - **M3 · Progress-file + clean-state gate.** Make durable cross-window state explicit: a progress
   log + git history, and a workflow exit gate requiring a clean, mergeable state per feature.
   Builds on one-loop-one-commit. — *effective-harnesses-for-long-running-agents.*
@@ -42,9 +39,9 @@
 
 ### Cross-cutting decision (open)
 
-- **AGENTS.md portability.** ADF is CLAUDE.md-only while AGENTS.md is becoming a portable
-  cross-tool standard (Linux Foundation, 60k+ repos, 25+ tools). Decide ADF's relationship before
-  shipping v1.1 (ADR-0009). Needs a dedicated follow-up — the research pass did not resolve it.
+- **AGENTS.md portability ✅ done.** Constitution moved to the submodule root (`adf/CLAUDE.md` now
+  resolves) and mirrored as `adf/AGENTS.md`; init emits both `CLAUDE.md` and `AGENTS.md` in the
+  consumer (ADR-0009). ADF is now portable to AGENTS.md-reading tools.
 
 ## Promotion to v1.0
 

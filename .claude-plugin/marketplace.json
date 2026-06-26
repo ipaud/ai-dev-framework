@@ -1,0 +1,11 @@
+{
+  "name": "adf",
+  "owner": { "name": "ipaud" },
+  "plugins": [
+    {
+      "name": "adf",
+      "source": ".",
+      "description": "AI Development Framework — agnostic agent environment (skills, subagents, workflows, memory, hooks)."
+    }
+  ]
+}

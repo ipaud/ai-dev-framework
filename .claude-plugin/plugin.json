@@ -1,0 +1,12 @@
+{
+  "name": "adf",
+  "version": "0.2.0",
+  "description": "AI Development Framework — a stack-agnostic agent environment: a constitution, 17 skills, 11 subagents, workflows, memory, and lifecycle hooks.",
+  "author": { "name": "ADF contributors" },
+  "homepage": "https://github.com/ipaud/ai-dev-framework",
+  "license": "MIT",
+  "keywords": ["agent", "development", "framework", "loop", "agnostic", "skills", "subagents"],
+  "skills": "./core/skills/",
+  "agents": "./core/agents/",
+  "hooks": "./core/hooks/hooks.json"
+}

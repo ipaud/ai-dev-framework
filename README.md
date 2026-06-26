@@ -46,6 +46,21 @@ checks the install and prints a pass/fail line per check.
 After init, fill in `adf-adapter/ADAPTER.md` with the project's stack, gate commands, and
 budgets. See `examples/gesturelab/ADAPTER.md` for a worked example.
 
+### As a plugin (alternative)
+
+ADF also ships a Claude Code plugin manifest (`.claude-plugin/`) for native install/update of the
+skills, agents, and hooks:
+
+```sh
+claude plugin marketplace add ipaud/ai-dev-framework
+claude plugin install adf@adf
+```
+
+The plugin path covers skills/agents/hooks discovery; the **submodule path remains the supported
+way to get project-local `adf-memory/` + `adf-adapter/` state** (the plugin does not seed those).
+Use the submodule for a full ADF project; the plugin to share just the skills/agents/hooks. See
+ADR-0007.
+
 ## Principles
 
 - **Objective gates decide done.** The adapter's per-tier gate commands are the source of truth.

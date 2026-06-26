@@ -1,6 +1,6 @@
 # ADR-0007: Plugin + marketplace packaging
 
-- **Status:** proposed
+- **Status:** accepted (manifest shipped; submodule retained as fallback)
 - **Date:** 2026-06-26
 - **Targets:** v1.1 (roadmap M1)
 
