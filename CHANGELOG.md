@@ -6,6 +6,14 @@ All notable changes to ADF are documented here. Format follows
 
 ## [Unreleased]
 
+### Added
+- `docs/roadmap.md` — ADF's own v1.1 backlog (plugin packaging, lifecycle/compaction hooks,
+  evals, richer frontmatter, AGENTS.md portability), each item sourced.
+- `docs/research/v1.1-agent-platform-2026.md` — cited evidence base (22 primary sources,
+  25 verified claims) for the v1.1 roadmap.
+- ADRs 0007 (plugin packaging), 0008 (lifecycle hooks + compaction), 0009 (AGENTS.md
+  portability) — all `proposed`, targeting v1.1.
+
 ## [0.1.0] — initial
 
 Pre-1.0: the framework is built but unproven in a real project. Expect breaking changes to
