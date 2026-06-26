@@ -35,7 +35,7 @@ submodule bump) without touching its own state.
 | `core/workflows/` | 5 compositions | agent order + exit gate |
 | `core/templates/` | 11 skeletons | fill-in artifacts |
 | `core/memory/` | 8 files + loop template | seed for `adf-memory/` |
-| `core/hooks/` | 3 shell hooks | runtime nudges |
+| `core/hooks/` | 6 shell hooks | runtime nudges + state durability |
 
 ## Wiring — how skills and agents reach Claude Code
 
@@ -48,7 +48,9 @@ On filesystems without symlink support (e.g. exFAT) init **falls back to copying
 not live — after a core submodule update the consumer must re-run `adf-init.sh`. `adf-doctor.sh`
 verifies "wired (symlink or copy)" rather than assuming symlinks. See ADR-0002.
 
-Hooks are registered in `.claude/settings.json` (SessionStart, PreToolUse on Edit|Write, Stop).
+Hooks are registered in `.claude/settings.json` (SessionStart, UserPromptSubmit, PreToolUse on
+Edit|Write, PreCompact, SessionEnd, Stop). PreCompact and SessionEnd give `adf-memory` durability
+across compaction and session boundaries (ADR-0008).
 If the consumer already has a `settings.json`, init prints the block to merge rather than
 overwriting.
 

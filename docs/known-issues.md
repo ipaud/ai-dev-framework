@@ -8,6 +8,10 @@ used.
 grow without bound. **Deferred:** a future compaction pass (archive old loops, summarize stale
 lessons). No action now — readability is fine at current scale.
 
+_Partly addressed in v1.1:_ `PreCompact`/`SessionEnd` hooks (ADR-0008) keep active state durable
+across context compaction and session boundaries, so compaction no longer silently loses the
+active loop. The append-only *disk* growth is still unbounded — that archival pass remains deferred.
+
 ## Active-loop detection is mtime-based
 `session-start.sh` and `pre-edit.sh` pick the active loop as the newest non-template file in
 `adf-memory/loops/` by modification time (`ls -t`). Touching an old loop file, or a checkout that

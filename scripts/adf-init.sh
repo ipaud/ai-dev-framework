@@ -57,7 +57,10 @@ read -r -d '' SETTINGS <<EOF || true
 {
   "hooks": {
     "SessionStart": [{ "hooks": [{ "type": "command", "command": "bash \"$ADF/core/hooks/session-start.sh\"" }] }],
+    "UserPromptSubmit": [{ "hooks": [{ "type": "command", "command": "bash \"$ADF/core/hooks/user-prompt-submit.sh\"" }] }],
     "PreToolUse": [{ "matcher": "Edit|Write", "hooks": [{ "type": "command", "command": "bash \"$ADF/core/hooks/pre-edit.sh\"" }] }],
+    "PreCompact": [{ "hooks": [{ "type": "command", "command": "bash \"$ADF/core/hooks/pre-compact.sh\"" }] }],
+    "SessionEnd": [{ "hooks": [{ "type": "command", "command": "bash \"$ADF/core/hooks/session-end.sh\"" }] }],
     "Stop": [{ "hooks": [{ "type": "command", "command": "bash \"$ADF/core/hooks/post-loop.sh\"" }] }]
   }
 }

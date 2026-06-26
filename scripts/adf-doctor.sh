@@ -39,19 +39,22 @@ done
 [ "$wired" -eq "$EXPECT_AGENTS" ] && ok "$EXPECT_AGENTS agents wired in .claude/" || bad "agents wired: $wired (want $EXPECT_AGENTS)"
 
 # 4. Hooks executable (settings points at the core copies by absolute path).
-for h in session-start pre-edit post-loop; do
+HOOKS="session-start user-prompt-submit pre-edit pre-compact session-end post-loop"
+for h in $HOOKS; do
   [ -x "$ADF/core/hooks/$h.sh" ] && ok "hook executable: $h.sh" || bad "hook not executable: $h.sh"
 done
 
 # 5. Settings reference the hooks. Missing settings = fail; present-but-unmerged = warning (F).
 settings="$CLAUDE_DIR/settings.json"
 if [ -f "$settings" ]; then
-  if grep -q "core/hooks/session-start.sh" "$settings" \
-     && grep -q "core/hooks/pre-edit.sh" "$settings" \
-     && grep -q "core/hooks/post-loop.sh" "$settings"; then
-    ok "settings.json references the three hooks"
+  missing=""
+  for h in $HOOKS; do
+    grep -q "core/hooks/$h.sh" "$settings" || missing="$missing $h"
+  done
+  if [ -z "$missing" ]; then
+    ok "settings.json references all six hooks"
   else
-    warn "settings.json exists but does not reference the hooks — merge the block printed by adf-init.sh"
+    warn "settings.json exists but is missing hooks ($missing) — merge the block printed by adf-init.sh"
   fi
 else
   bad "no .claude/settings.json — run adf-init.sh"
