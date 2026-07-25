@@ -18,5 +18,6 @@ For new behavior or anything crossing a boundary. Feature-tier loop.
 
 ## Exit gate
 All feature-tier gate commands (from the adapter) green, with real output pasted in the loop's
-Validate, **and** memory updated (loop log, decisions/lessons/known-issues as applicable). The AI
-Score is advisory only.
+Validate, **and** memory updated (loop log, decisions/lessons/known-issues as applicable), **and**
+a clean, mergeable working tree (no stray uncommitted changes, no unresolved conflicts) — checked
+by the Stop hook. The AI Score is advisory only.

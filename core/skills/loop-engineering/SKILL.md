@@ -33,11 +33,16 @@ The start of any work. Before writing code, pick the tier.
      7. **Validate** — run the adapter's gate commands for this tier; paste the **real output**.
      8. **Reflect** — lessons → `lessons.md`, decisions → `decisions.md`, risks → `known-issues.md`.
      9. **Score** — optional advisory axes → `score.md`.
-3. **Record the loop** in `adf-memory/loops/NNNN-slug.md` (copy `0000-template.md`).
-4. **Close** only when the adapter's objective gates are green. Then one conventional commit.
+3. **Record the loop** in `adf-memory/loops/NNNN-slug.md` (copy `0000-template.md`). This file plus
+   `project.md` is the durable progress record — what survives compaction and session boundaries
+   (see the `PreCompact` / `SessionEnd` hooks).
+4. **Close** only when the adapter's objective gates are green **and** the working tree is clean
+   and mergeable (no stray uncommitted changes, no unresolved conflicts). Then one conventional
+   commit.
 
 ## Output
-A loop file at `adf-memory/loops/NNNN-slug.md` with real gate output in Validate, and one commit.
+A loop file at `adf-memory/loops/NNNN-slug.md` with real gate output in Validate, a clean working
+tree, and one commit.
 
 ## Anti-patterns
 - Sizing down when unsure.

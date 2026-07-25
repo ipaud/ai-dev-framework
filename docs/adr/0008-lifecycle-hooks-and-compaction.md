@@ -2,7 +2,7 @@
 
 - **Status:** accepted
 - **Date:** 2026-06-26
-- **Targets:** v1.1 (roadmap M2; M3 progress-gate still pending)
+- **Targets:** v1.1 (roadmap M2; M3 progress-gate resolved in ADR-0010)
 
 ## Context
 ADF v0.1.0 wires only `SessionStart`, `PreToolUse(Edit|Write)`, and `Stop`. Its known memory issue

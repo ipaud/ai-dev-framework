@@ -6,6 +6,16 @@ All notable changes to ADF are documented here. Format follows
 
 ## [Unreleased]
 
+### Added
+- Clean-state gate: `post-loop.sh` (`Stop` hook) runs a real `git status` check (`PASS`/`WARN`/
+  `SKIP`) instead of a printed checklist item; `feature.md`'s exit gate and `loop-engineering`'s
+  Close step both require a clean, mergeable working tree (ADR-0010, roadmap M3 — last v1.1
+  must-have).
+
+### Changed
+- `loop-engineering` SKILL.md formalizes the active loop file + `project.md` as the progress file
+  the `PreCompact`/`SessionEnd` hooks re-anchor from (no new file added).
+
 ## [0.2.0] — platform alignment
 
 Aligns ADF with the 2026 Claude Code platform. Evidence base:

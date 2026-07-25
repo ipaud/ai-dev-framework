@@ -13,9 +13,10 @@
   state-seeding path (ADR-0007). — *plugins-reference, plugin-marketplaces.*
 - **M2 ✅ done · Lifecycle + compaction hooks.** Added `PreCompact`, `SessionEnd`, and
   `UserPromptSubmit` hooks, wired by init + checked by doctor (ADR-0008). — *hooks doc.*
-- **M3 · Progress-file + clean-state gate.** Make durable cross-window state explicit: a progress
-  log + git history, and a workflow exit gate requiring a clean, mergeable state per feature.
-  Builds on one-loop-one-commit. — *effective-harnesses-for-long-running-agents.*
+- **M3 ✅ done · Progress-file + clean-state gate.** Formalized the active loop file + `project.md`
+  as the progress file (no new file); `post-loop.sh` now runs a real `git status` clean-state check
+  instead of a printed reminder; `feature.md`'s exit gate and `loop-engineering`'s Close step both
+  name the clean-tree requirement (ADR-0010). — *effective-harnesses-for-long-running-agents.*
 
 ### Should-have
 
