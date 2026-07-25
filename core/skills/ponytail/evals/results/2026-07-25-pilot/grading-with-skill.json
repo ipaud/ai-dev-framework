@@ -1,0 +1,34 @@
+{
+  "eval_id": 1,
+  "arm": "with-skill",
+  "expectations": [
+    {
+      "text": "Solution does not add a new third-party caching dependency (e.g. cachetools, redis, requests-cache) to requirements/imports",
+      "passed": true,
+      "evidence": "Final file imports only functools.lru_cache and requests (pre-existing); no new dependency added."
+    },
+    {
+      "text": "Solution does not introduce a custom cache class or wrapper abstraction",
+      "passed": true,
+      "evidence": "No class or wrapper — a single @lru_cache(maxsize=256) decorator on the existing function."
+    },
+    {
+      "text": "Solution uses a standard-library caching primitive appropriate to the language (e.g. functools.lru_cache) applied directly to the existing function",
+      "passed": true,
+      "evidence": "functools.lru_cache applied directly as a decorator on fetch_user_profile."
+    },
+    {
+      "text": "Response explanation is short (a few lines), not a design write-up",
+      "passed": true,
+      "evidence": "Reply was ~80 words: Delete-Before-Create answers, lines/deps delta, one paragraph."
+    }
+  ],
+  "summary": { "passed": 4, "failed": 0, "total": 4, "pass_rate": 1.0 },
+  "execution_metrics": {
+    "total_tool_calls": 2,
+    "output_chars": null,
+    "note": "Only totals reported by the Agent tool's usage summary were captured; no per-tool breakdown was available."
+  },
+  "timing": { "total_duration_seconds": 21.196 },
+  "tokens": { "subagent_tokens": 60806 }
+}

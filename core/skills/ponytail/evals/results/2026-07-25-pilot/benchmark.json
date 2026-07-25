@@ -1,0 +1,11 @@
+{
+  "skill_name": "ponytail",
+  "run_date": "2026-07-25",
+  "method": "Manual ablation via the Agent tool (general-purpose subagent), skill content injected as the with-skill arm's prompt — same pattern Claude Code's own `context: fork` uses. Not the skill-creator plugin's automated run_loop.py, which needs the plugin's skill loaded in-session (requires /reload-plugins, unavailable mid-session). Schema matches skill-creator's grading.json/benchmark.json so a future in-session run is comparable.",
+  "runs_per_arm": 1,
+  "caveat": "n=1 per arm. skill-creator defaults to 3 runs/case specifically to control for LLM sampling variance — this pilot proves the pipeline and gives one real data point, not a statistically robust benchmark. Do not treat pass-rate deltas below as precise until re-run with runs>=3.",
+  "with_skill": { "pass_rate": 1.0, "passed": 4, "total": 4, "subagent_tokens": 60806, "duration_seconds": 21.196 },
+  "without_skill_baseline": { "pass_rate": 0.5, "passed": 2, "total": 4, "subagent_tokens": 60280, "duration_seconds": 20.590 },
+  "delta": { "pass_rate": 0.5, "subagent_tokens": 526, "duration_seconds": 0.606 },
+  "finding": "On eval 1 (add a cache), the skill changed the solution shape, not the cost: both arms cost ~60.5k tokens and ~21s (skill body added negligible overhead). Without the skill, the baseline built a hand-rolled TTL cache (module dict + time.monotonic() + manual expiry) — a custom abstraction the skill explicitly warns against. With the skill, the same request produced a single functools.lru_cache decorator, satisfying every expectation. This is the skill doing its stated job: same budget, smaller/more-stdlib output."
+}

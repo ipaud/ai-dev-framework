@@ -22,5 +22,13 @@ note when an axis moves.
 - **Tech-debt** — deliberate shortcuts tracked, not accumulating silently.
 - **Complexity** — smallest correct shape; Delete Before Create honored.
 
+## Grounding in real eval data
+
+Axes stay subjective 1–5 vibes by default — that's fine, this score is advisory only (see ADR-0004).
+Where a skill has real benchmark data (`core/skills/<skill>/evals/results/*/benchmark.json`, per
+ADR-0012), let it inform the related axis instead of guessing: a skill with a measured pass-rate
+delta backs the **Complexity** or **Tech-debt** score it drove that loop. No benchmark yet for most
+skills — score by judgment until one exists, same as before.
+
 ## Notes
 <!-- One line per axis movement: "NNNN — testing 3→4: added regression for the parser." -->

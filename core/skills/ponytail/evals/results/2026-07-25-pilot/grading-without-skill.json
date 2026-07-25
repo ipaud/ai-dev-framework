@@ -1,0 +1,34 @@
+{
+  "eval_id": 1,
+  "arm": "without-skill (baseline)",
+  "expectations": [
+    {
+      "text": "Solution does not add a new third-party caching dependency (e.g. cachetools, redis, requests-cache) to requirements/imports",
+      "passed": true,
+      "evidence": "Used only stdlib time + a module-level dict; no new dependency added."
+    },
+    {
+      "text": "Solution does not introduce a custom cache class or wrapper abstraction",
+      "passed": false,
+      "evidence": "Built a hand-rolled TTL cache: a module-level dict keyed by user_id storing (timestamp, value) tuples, with manual expiry logic — a custom cache mechanism, not stdlib."
+    },
+    {
+      "text": "Solution uses a standard-library caching primitive appropriate to the language (e.g. functools.lru_cache) applied directly to the existing function",
+      "passed": false,
+      "evidence": "Did not use functools.lru_cache or any stdlib caching primitive; implemented caching manually with time.monotonic() + a dict."
+    },
+    {
+      "text": "Response explanation is short (a few lines), not a design write-up",
+      "passed": true,
+      "evidence": "Reply was ~90 words, including a justification for choosing a hand-rolled TTL cache over functools.lru_cache — concise but includes design rationale absent from the with-skill arm."
+    }
+  ],
+  "summary": { "passed": 2, "failed": 2, "total": 4, "pass_rate": 0.5 },
+  "execution_metrics": {
+    "total_tool_calls": 2,
+    "output_chars": null,
+    "note": "Only totals reported by the Agent tool's usage summary were captured; no per-tool breakdown was available."
+  },
+  "timing": { "total_duration_seconds": 20.590 },
+  "tokens": { "subagent_tokens": 60280 }
+}

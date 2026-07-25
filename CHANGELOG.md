@@ -7,6 +7,11 @@ All notable changes to ADF are documented here. Format follows
 ## [Unreleased]
 
 ### Added
+- Real skill-eval pilot: `core/skills/ponytail/evals/` with a `skill-creator`-schema-compliant
+  `evals.json` and real, hand-orchestrated with-skill/without-skill results — 100% vs 50%
+  expectation pass-rate at flat token/time cost (ADR-0012, roadmap S3, pilot scope). `score.md`
+  now points to `evals/results/*/benchmark.json` as grounding for the Complexity/Tech-debt axes
+  when a skill has real data.
 - `allowed-tools` frontmatter on all 17 skills, scoped to each skill's own documented procedure —
   read-only findings skills get `Read Grep Glob`; write-capable skills add `Edit Write`; `release`
   and `loop-engineering` add scoped `Bash(git ...)` patterns for the commands their procedures

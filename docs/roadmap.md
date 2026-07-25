@@ -28,8 +28,14 @@
 - **S2 · Richer agent frontmatter.** Selective model tiers (opus for architect/planner, haiku for
   documenter), `disallowedTools`/`mcp__` patterns, `isolation: worktree` for write-capable agents.
   Gate on a per-agent cost/quality benchmark first. — *sub-agents doc.*
-- **S3 · Real evals.** Adopt `skill-creator` benchmarking (pass-rate / tokens / time); feed the
-  results into the advisory AI Score — score stays advisory, data gets real. — *skills doc.*
+- **S3 ◐ partial · Real evals.** Mechanism proven on one pilot: `ponytail` benchmarked with-skill
+  vs baseline (1 case, n=1/arm) — 100% vs 50% expectation pass-rate at flat token/time cost
+  (ADR-0012). `evals.json` schema in place at `core/skills/ponytail/evals/`; `score.md` points to
+  `evals/results/*/benchmark.json` as grounding when a skill has one. `claude plugin eval` (native,
+  scriptable) is early-access-gated in this environment; `skill-creator`'s automated loop needs
+  `/reload-plugins`, unreachable mid-session — this pilot ran hand-orchestrated via the `Agent`
+  tool instead. Full rollout (other 16 skills, ≥3 runs/case, independent grader) is follow-up, not
+  done here — deliberately scoped to one pilot. — *skills doc, ADR-0012.*
 - **S4 · Delegation contracts.** Give each subagent an explicit objective / output-format / tools /
   boundaries; add a ~1–2k token summary budget and an effort-to-complexity rule to the workflows.
   — *multi-agent-research-system.*

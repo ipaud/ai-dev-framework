@@ -1,0 +1,17 @@
+{
+  "skill_name": "ponytail",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Add a cache for these API responses.",
+      "expected_output": "Uses a stdlib/built-in caching primitive (e.g. functools.lru_cache) on the existing fetch function. No new dependency, no custom cache class/wrapper, minimal diff.",
+      "files": ["fetcher.py"],
+      "expectations": [
+        "Solution does not add a new third-party caching dependency (e.g. cachetools, redis, requests-cache) to requirements/imports",
+        "Solution does not introduce a custom cache class or wrapper abstraction",
+        "Solution uses a standard-library caching primitive appropriate to the language (e.g. functools.lru_cache) applied directly to the existing function",
+        "Response explanation is short (a few lines), not a design write-up"
+      ]
+    }
+  ]
+}
