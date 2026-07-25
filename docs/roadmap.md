@@ -54,5 +54,12 @@
 
 ## Promotion to v1.0
 
-Per extract-don't-predict, ADF stays pre-1.0 until validated across ≥2 real projects. `adf-demo`
-is the first. A second, different consumer (plus the v1.1 platform alignment) is the path to 1.0.
+Per extract-don't-predict, ADF stays pre-1.0 until validated across ≥2 real projects.
+
+- **CLUBZ (`clubzapp`) ✅ first consumer.** TanStack Start + React 19 + Vite/Bun + Supabase RLS
+  multi-tenant SaaS. Submodule installed, `adf-init.sh` wired 17 skills + 11 agents,
+  `adf-adapter/ADAPTER.md` filled with its real stack/gates/security/tokens, gate commands
+  verified to run clean (`typecheck`, `lint`, `test:run`). No feature loop run through it yet —
+  install-and-adapt validated, the loop method itself is not.
+- **Second, different consumer** — still needed, plus the v1.1 platform alignment above, to reach
+  1.0.

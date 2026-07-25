@@ -71,8 +71,11 @@ ADR-0007.
 
 ## Versioning
 
-Pre-1.0. The method is in use but unproven across projects; the API of skills, agents, and
-scripts may change until a real project validates it. See `CHANGELOG.md`.
+Pre-1.0. First real consumer installed: **CLUBZ** (`clubzapp`) — submodule + `adf-init.sh`,
+`adf-adapter/ADAPTER.md` filled with its real stack, gate commands verified green
+(`typecheck`/`lint`/`test:run`). One consumer validated; a second, different one is the remaining
+path to 1.0 (see `docs/roadmap.md`). The API of skills, agents, and scripts may still change until
+then. See `CHANGELOG.md`.
 
 ## License
 
