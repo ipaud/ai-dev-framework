@@ -1,6 +1,7 @@
 ---
 name: project-planner
 description: Maintain the backlog, roadmap, prioritization, and cross-task dependencies; recommend the next loop. Use for planning and prioritization. Evolving, not static. Writes roadmap.md.
+allowed-tools: Read Grep Glob Edit Write
 ---
 
 # project-planner

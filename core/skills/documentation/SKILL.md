@@ -1,6 +1,7 @@
 ---
 name: documentation
 description: Keep the loop log, architecture.md, roadmap.md, decisions.md, known-issues.md, and README current. Use at loop close, release, and memory update. Output is doc diffs only for what actually changed.
+allowed-tools: Read Grep Glob Edit Write
 ---
 
 # documentation

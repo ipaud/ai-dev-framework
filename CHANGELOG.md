@@ -7,6 +7,10 @@ All notable changes to ADF are documented here. Format follows
 ## [Unreleased]
 
 ### Added
+- `allowed-tools` frontmatter on all 17 skills, scoped to each skill's own documented procedure —
+  read-only findings skills get `Read Grep Glob`; write-capable skills add `Edit Write`; `release`
+  and `loop-engineering` add scoped `Bash(git ...)` patterns for the commands their procedures
+  actually run (ADR-0011, roadmap S1).
 - Clean-state gate: `post-loop.sh` (`Stop` hook) runs a real `git status` check (`PASS`/`WARN`/
   `SKIP`) instead of a printed checklist item; `feature.md`'s exit gate and `loop-engineering`'s
   Close step both require a clean, mergeable working tree (ADR-0010, roadmap M3 — last v1.1

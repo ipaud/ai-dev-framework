@@ -1,6 +1,7 @@
 ---
 name: performance-review
 description: Review agnostic performance axes — hot paths, allocations in loops, blocking on async, startup/footprint, memory, I/O — against the adapter's budget. Use for perf-sensitive or hot-path changes. Output is measured findings vs budget.
+allowed-tools: Read Grep Glob
 ---
 
 # performance-review

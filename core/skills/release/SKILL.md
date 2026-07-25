@@ -1,6 +1,7 @@
 ---
 name: release
 description: Bump the version, build the changelog from conventional commits, tag, and write release notes. Use when cutting a release. Refuses to release unless the feature-tier definition of done has passed.
+allowed-tools: Read Edit Write Bash(git log:*) Bash(git tag:*)
 ---
 
 # release

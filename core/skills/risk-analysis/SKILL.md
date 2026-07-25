@@ -1,6 +1,7 @@
 ---
 name: risk-analysis
 description: Surface technical, product, and security risks; rate likelihood × impact; propose mitigations. Use during planning, before a risky change, or at loop reflect. Logs to known-issues.md.
+allowed-tools: Read Grep Glob Edit Write
 ---
 
 # risk-analysis

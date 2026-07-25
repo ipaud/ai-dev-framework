@@ -1,6 +1,7 @@
 ---
 name: ux-review
 description: Heuristic review of navigation, feedback, error/loading/empty states, and consistency. Use for any UI change. Output is issues plus suggested fixes. Agnostic — no framework assumptions.
+allowed-tools: Read Grep Glob
 ---
 
 # ux-review

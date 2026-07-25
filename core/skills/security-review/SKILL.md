@@ -1,6 +1,7 @@
 ---
 name: security-review
 description: Review secrets, permissions, input validation, dependency CVEs, authorization, data handling, transport, and storage. Use when a change touches inputs, auth, secrets, or permissions. Output is findings by severity.
+allowed-tools: Read Grep Glob
 ---
 
 # security-review

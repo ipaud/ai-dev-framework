@@ -20,9 +20,11 @@
 
 ### Should-have
 
-- **S1 · Richer skill frontmatter.** Add `allowed-tools` and `paths`; run review skills with
-  `context: fork` for native isolation (verify on target version — bug #17283 now closed).
-  — *skills doc, agentskills.io.*
+- **S1 ◐ partial · Richer skill frontmatter.** `allowed-tools` added to all 17 skills, scoped to
+  each skill's own documented procedure (ADR-0011). `paths` evaluated and dropped — no fit that
+  doesn't either name a stack (violates invariant 1) or suppress a process skill at its trigger
+  moment. `context: fork` on review skills deferred to S3 (needs benchmark data per the research
+  doc's own open question, not yet built). — *skills doc, agentskills.io, ADR-0011.*
 - **S2 · Richer agent frontmatter.** Selective model tiers (opus for architect/planner, haiku for
   documenter), `disallowedTools`/`mcp__` patterns, `isolation: worktree` for write-capable agents.
   Gate on a per-agent cost/quality benchmark first. — *sub-agents doc.*

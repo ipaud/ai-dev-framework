@@ -1,6 +1,7 @@
 ---
 name: ponytail
 description: Delete Before Create and the simplify after-pass. Use before adding any file or dependency, and immediately after any implement step, to force the smallest correct change. Output is the line delta and dependency delta.
+allowed-tools: Read Grep Glob Edit Write
 ---
 
 # ponytail

@@ -1,6 +1,7 @@
 ---
 name: loop-engineering
 description: Structure any unit of work as a loop sized to the task (trivial / change / feature). Use at the start of every piece of work to pick the tier, run the right depth, and record the loop. Pastes real gate output before closing.
+allowed-tools: Read Grep Glob Edit Write Bash(git status:*)
 ---
 
 # loop-engineering

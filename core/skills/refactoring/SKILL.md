@@ -1,6 +1,7 @@
 ---
 name: refactoring
 description: Behavior-preserving structural change with tests green before and after, driven by ponytail. Use to improve structure without changing behavior. No feature change in the same loop.
+allowed-tools: Read Grep Glob Edit Write
 ---
 
 # refactoring

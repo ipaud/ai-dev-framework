@@ -1,6 +1,7 @@
 ---
 name: architecture-review
 description: Review structure for coupling, circular dependencies, responsibility leaks, god components, layer separation, and complexity hotspots. Use for a new module or any structural change. Output is findings plus ADR proposals.
+allowed-tools: Read Grep Glob
 ---
 
 # architecture-review

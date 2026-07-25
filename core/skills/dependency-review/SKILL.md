@@ -1,6 +1,7 @@
 ---
 name: dependency-review
 description: Judge each dependency on weight, maintenance health, alternatives, bundle/footprint impact, risk, and removability. Use when adding a dependency or auditing existing ones. Output is a keep / replace / remove verdict per dependency.
+allowed-tools: Read Grep Glob
 ---
 
 # dependency-review

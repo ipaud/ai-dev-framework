@@ -1,6 +1,7 @@
 ---
 name: repo-analysis
 description: Learn from a reference repository under references/ without copying its code. Use when a repo is added to references/ or prior art is needed. Output is a structured read — ideas to adopt, problems to avoid — never copied code.
+allowed-tools: Read Grep Glob Edit Write
 ---
 
 # repo-analysis

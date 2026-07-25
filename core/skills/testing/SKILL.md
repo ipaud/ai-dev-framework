@@ -1,6 +1,7 @@
 ---
 name: testing
 description: Decide what needs tests, where they live, the coverage target, and what is not worth testing. Use when designing, writing, or running tests for a change. Output is a test plan plus the tests.
+allowed-tools: Read Grep Glob Edit Write
 ---
 
 # testing

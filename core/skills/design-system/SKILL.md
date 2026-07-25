@@ -1,6 +1,7 @@
 ---
 name: design-system
 description: Check token usage and component reuse; flag one-off styles. Use for any UI change. Tokens are defined in the adapter, not here. Output is consistency findings.
+allowed-tools: Read Grep Glob
 ---
 
 # design-system

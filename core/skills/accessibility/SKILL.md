@@ -1,6 +1,7 @@
 ---
 name: accessibility
 description: WCAG-aligned review of semantics, keyboard navigation, focus order, contrast, ARIA, and reduced-motion. Use for any UI change. Output is violations by WCAG level.
+allowed-tools: Read Grep Glob
 ---
 
 # accessibility

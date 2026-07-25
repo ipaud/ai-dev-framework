@@ -1,6 +1,7 @@
 ---
 name: debugging
 description: Reproduce, isolate, hypothesize, apply the minimal fix, add a regression test, and record the lesson. Use for a reported bug or failing behavior. Output is root cause plus fix plus a lessons entry.
+allowed-tools: Read Grep Glob Edit Write
 ---
 
 # debugging
